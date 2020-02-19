@@ -1,5 +1,7 @@
 import express from 'express';
 import path from 'path';
+import bodyParser from 'body-parser';
+import routes from './routes';
 
 const app = express();
 const env = process.env.NODE_ENV || app.get('env');
@@ -24,6 +26,9 @@ const PORT = 3001; // env === 'development' ? 3002 : (process.env.PORT || 3000);
 // app.use('/', (req, res) => {
 //   res.sendFile(INDEX_PATH);
 // });
+
+app.use(express.json());
+app.use('/heroes', routes);
 
 app.listen(PORT, () => {
   // console.log(`Environment: ${env}`);

@@ -1,5 +1,5 @@
 {
-  "name": "heroes-microservice",
+  "name": "villains-microservice",
   "version": "1.0.0",
   "description": "Just a small project to learn about microservices and containerizing them via Docker",
   "main": "index.js",
@@ -8,8 +8,8 @@
     "build:dev": "npm run clean && node_modules/.bin/webpack --env development --config config/webpack.config.js",
     "build:production": "npm run clean && node_modules/.bin/webpack --env production --config config/webpack.config.js",
     "clean": "rm -rf build",
-    "start:dev": "NODE_ENV=development node build/heroes.app.js",
-    "start": "NODE_ENV=production node build/heroes.app.js"
+    "start:dev": "node NODE_ENV=development build/villains.app.js",
+    "start": "node NODE_ENV=production build/villains.app.js"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,6 @@
   },
   "homepage": "https://github.com/jvestolas/heroes-and-villains-microservices#readme",
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "axios": "^0.19.2",
-    "babel-loader": "^8.0.6",
     "express": "^4.17.1",
     "request": "^2.88.2",
     "webpack": "^4.41.6",
