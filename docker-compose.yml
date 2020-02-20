@@ -1,0 +1,26 @@
+version: '3'
+services:
+    heroes:
+      container_name: heroes-service
+      build:
+        context: server/services/heroes
+        dockerfile: Dockerfile
+      ports:
+        - "3001:3001"
+      networks:
+        - default
+      restart:
+        on-failure
+    villains:
+      container_name: villains-service
+      build:
+        context: server/services/villains
+        dockerfile: Dockerfile
+      ports:
+        - "3011:3011"
+      networks:
+        - default
+      restart:
+        on-failure
+networks:
+  microservices-network: {}

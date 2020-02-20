@@ -8,8 +8,8 @@
     "build:dev": "npm run clean && node_modules/.bin/webpack --env development --config config/webpack.config.js",
     "build:production": "npm run clean && node_modules/.bin/webpack --env production --config config/webpack.config.js",
     "clean": "rm -rf build",
-    "start:dev": "NODE_ENV=development node build/heroes.app.js",
-    "start": "NODE_ENV=production node build/heroes.app.js"
+    "start:dev": "npm run build:dev && NODE_ENV=development node build/heroes.app.js",
+    "start": "npm run build:production && NODE_ENV=production node build/heroes.app.js"
   },
   "repository": {
     "type": "git",

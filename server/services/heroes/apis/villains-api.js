@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// ideally, this baseUrl variable would either be localhost/staging/production host names.
-// const baseUrl = `localhost:${process.env.NODE_ENV === 'development' ? '3011' : '3012'}`;
-const baseUrl = 'http://localhost:3011';
+const env = process.env.NODE_ENV || app.get('env');
+
+const baseUrl = env === 'production' ? 'http://villains-service:3011' : 'http://localhost:3011';
 const villainsApiUrl = `${baseUrl}/villains`;
 
 const villainsApi = {
@@ -10,8 +10,6 @@ const villainsApi = {
     const requestUrl = villainIds
       ? `${villainsApiUrl}?ids=${villainIds.join('&ids=')}`
       : `${villainsApiUrl}`;
-
-    console.log('request url: ', requestUrl);
 
     return axios({
       method: 'get',

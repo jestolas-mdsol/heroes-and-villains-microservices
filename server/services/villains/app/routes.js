@@ -16,6 +16,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+  const villain = villainsController.get(req, res);
+
   if (!villain) {
     res.status(500).json({ error: 'Villain Not Available' });
   } else {
