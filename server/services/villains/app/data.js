@@ -55,6 +55,13 @@ const villainsData = [
     quirk: 'Crystallize',
     type: 'Transformation',
   },
+  {
+    id: 9,
+    name: 'Moonfish',
+    villainName: 'Moonfish',
+    quirk: 'Blade Tooth',
+    type: 'Transformation',
+  },
 ];
 
 export default villainsData;

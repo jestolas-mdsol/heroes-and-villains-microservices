@@ -1,11 +1,13 @@
-import villainsApi from '@apis/villains-api';
+export const villainIdsMap = heroesData => heroesData.reduce((acc, { encounteredVillainIds }) => {
+  const currentObject = acc;
 
-export const getEncounteredVillain = (villainId) => {
-  if (!villainId) {
-    return;
-  }
-j
-  villainsApi.get(villainId).then(({ data }) => {
-    console.log('response data: ', data);
+  encounteredVillainIds.forEach((villainId) => {
+    if (!currentObject[villainId]) {
+      currentObject[villainId] = 1;
+    } else {
+      currentObject[villainId] += 1;
+    }
   })
-};
+
+  return currentObject
+}, {});

@@ -11,5 +11,5 @@ app.use(express.json());
 app.use('/villains', routes);
 
 app.listen(PORT, () => {
-  console.log(`Villains Microservice is running on port ${PORT}`);
+  console.log(`Villains Microservice is running in **${env}** Mode on port ${PORT}`);
 });

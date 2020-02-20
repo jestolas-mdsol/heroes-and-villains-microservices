@@ -5,9 +5,7 @@ const router = express.Router();
 
 // get, post, put, patch, update, delete
 router.get('/', (req, res) => {
-  const heroes = heroesController.getAll(req, res);
-
-  res.json({ heroes });
+  heroesController.getMultiple(req, res);
 });
 
 router.get('/:id', (req, res) => {

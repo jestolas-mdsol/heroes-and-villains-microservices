@@ -1,14 +1,23 @@
 import heroesData from './data';
-import { getEncounteredVillain } from '@utils/villains';
+import villainsApi from '@apis/villains-api';
+import { villainIdsMap } from '@utils/villains';
 
 const heroesController = {
-  getAll: (req, res) => {
-    // realistically, this would be paginated when queried from a database.
-    // const encounteredVillainIds = heroesData.reduce((acc, hero, idx) => {
-    //
-    // }, {});
+  getMultiple: (req, res) => {
+    const encounteredVillainIdsMap = villainIdsMap(heroesData);
 
-    return heroesData;
+    villainsApi.getMultiple(Object.keys(encounteredVillainIdsMap)).then(({ data }) => {
+      const heroes = heroesData.map((hero) => {
+        const { encounteredVillainIds } = hero;
+
+        const heroObj = hero
+        heroObj['encounteredVillains'] = encounteredVillainIds.map(vId => data.villains.find(villain => villain.id === vId));
+
+        return heroObj;
+      });
+
+      res.json({ heroes });
+    }).catch(e => { console.log('API Error: ', e) });
   },
   get: (req, res) => {
     const result = heroesData.find((hero) => hero.id === parseInt(req.params.id, 10));

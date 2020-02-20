@@ -5,7 +5,7 @@ const heroesData = [
     heroName: 'All Might',
     quirk: 'One For All',
     type: 'Emitter',
-    villainsEncountered: [1, 4, 6],
+    encounteredVillainIds: [1, 4, 6],
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const heroesData = [
     heroName: 'Endeavor',
     quirk: 'Hellflame',
     type: 'Emitter',
-    villainsEncountered: [2, 6],
+    encounteredVillainIds: [2, 6],
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const heroesData = [
     heroName: 'Deku',
     quirk: 'One For All',
     type: 'Emitter',
-    villainsEncountered: [1, 2, 3, 4, 5, 6, 7, 8],
+    encounteredVillainIds: [1, 2, 3, 4, 5, 6, 7, 8],
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const heroesData = [
     heroName: 'Red Riot',
     quirk: 'Hardening',
     type: 'Transformation',
-    villainsEncountered: [1, 4, 6, 8],
+    encounteredVillainIds: [1, 4, 6, 8],
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const heroesData = [
     heroName: 'Froppy',
     quirk: 'Frog',
     type: 'Mutant',
-    villainsEncountered: [4, 5, 6],
+    encounteredVillainIds: [4, 5, 6],
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const heroesData = [
     heroName: 'Mt. Lady',
     quirk: 'Gigantification',
     type: 'Transformation',
-    villainsEncountered: [1, 4, 6],
+    encounteredVillainIds: [1, 4, 6],
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const heroesData = [
     heroName: 'Ingenium',
     quirk: 'Engine',
     type: 'Mutant',
-    villainsEncountered: [1, 2, 4, 5, 6],
+    encounteredVillainIds: [1, 2, 4, 5, 6],
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const heroesData = [
     heroName: 'Ryuku',
     quirk: 'Dragon',
     type: 'Transformation',
-    villainsEncountered: [3, 5, 7],
+    encounteredVillainIds: [3, 5, 7],
   },
 ];
 
