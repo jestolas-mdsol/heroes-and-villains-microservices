@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "\n########################################\n"
-echo "Setting up new microservice environment"
-echo "\n########################################\n"
-
-# cd server/services
-read -p "Enter a dashed name for this microservice (ex. new-microservice): " MICROSERVICE_NAME
-echo $MICROSERVICE_NAME
