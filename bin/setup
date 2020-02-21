@@ -1,0 +1,45 @@
+#!/bin/bash
+
+cat <<PHRESH
+
+
+  ██████╗ ██╗  ██╗██████╗ ███████╗███████╗██╗  ██╗
+  ██╔══██╗██║  ██║██╔══██╗██╔════╝██╔════╝██║  ██║
+  ██████╔╝███████║██████╔╝█████╗  ███████╗███████║
+  ██╔═══╝ ██╔══██║██╔══██╗██╔══╝  ╚════██║██╔══██║
+  ██║     ██║  ██║██║  ██║███████╗███████║██║  ██║
+  ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
+
+
+    ########################################
+    Setting up a phresh projekt environment
+    ########################################
+
+PHRESH
+
+cd client
+cat <<-CLIENT
+
+= = = = = = = = = = = = = = = = =
+Installing frontend node packages
+= = = = = = = = = = = = = = = = =
+
+CLIENT
+npm install
+cd -
+
+cd server/services
+for service in */ ; do
+cat <<-SERVER
+
+= = = = = = = = = = = = = = = = = = =
+Installing node packages for $service
+= = = = = = = = = = = = = = = = = = =
+
+SERVER
+
+cd $service
+npm install
+cd -
+done
+cd -

@@ -5,7 +5,7 @@ import routes from './routes';
 
 const app = express();
 const env = process.env.NODE_ENV || app.get('env');
-const PORT = env === 'development' ? 3011 : 3012;
+const PORT = 3011;
 
 app.use(express.json());
 app.use('/villains', routes);
