@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/jvestolas/heroes-and-villains-microservices#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "request": "^2.88.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
